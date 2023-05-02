@@ -12,7 +12,7 @@ test("Demo Login Test 1", async ({ page }) => {
   await page.getByRole("link", { name: "Sign in" }).click("");
 });
 
-test.only("Demo Login Test 2", async ({ page }) => {
+test("Demo Login Test 2", async ({ page }) => {
     // this is "recorded test"
   await page.goto(
     "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
@@ -28,3 +28,21 @@ test.only("Demo Login Test 2", async ({ page }) => {
   await page.getByRole("banner").getByText("Alex Popoescu").click();
   await page.getByRole("menuitem", { name: "Logout" }).click();
 });
+
+
+test.only("Demo Login Test 3", async({page})=>{
+    await page.pause();
+
+      await page.goto("https://admin-demo.nopcommerce.com/login");
+      await page.getByLabel("Email:").click();
+      await page.getByLabel("Email:").press("Meta+a");
+      await page.getByLabel("Email:").press("Meta+c");
+      await page.getByLabel("Email:").fill("admin@yourstore.com");
+      await page.getByLabel("Password:").click();
+      await page.getByLabel("Password:").press("Meta+a");
+      await page.getByLabel("Password:").fill("admin");
+      await page.getByRole("button", { name: "Log in" }).click();
+      await page.getByRole("link", { name: "Logout" }).click();
+
+      await page.close();
+})
