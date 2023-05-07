@@ -21,5 +21,9 @@ test('slow test', async ({page}) =>{
     
 })
 
-
+// Tags
+test("Test login page @fast", async ({page}) => {
+    //...
+    
+});
 
